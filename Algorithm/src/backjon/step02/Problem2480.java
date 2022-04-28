@@ -10,7 +10,7 @@ public class Problem2480 {
 	public static void main(String[] args) throws IOException {
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer(br.readLine());
+		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 		
 		int num1 = Integer.parseInt(st.nextToken());
 		int num2 = Integer.parseInt(st.nextToken());
@@ -34,7 +34,7 @@ public class Problem2480 {
 			result = numArr[numArr.length-1] * 100;
 			
 			// Math 클래스의 max() 메소드 사용
-			result = Math.max(num1, Math.max(num2, num3));
+			result = Math.max(num1, Math.max(num2, num3)) * 100;
 		}
 		
 		System.out.println(result);
