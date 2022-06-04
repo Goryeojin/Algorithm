@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 
 public class Problem11720 {
 	public static void main(String[] args) throws IOException {
+		// 숫자의 합
+		// 1번째 줄에 숫자의 개수 N(1 <= N <= 100), 2번째 줄에 숫자 N개가 공백 없이 주어진다.
 		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		

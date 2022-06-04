@@ -1,10 +1,7 @@
 package backjon.step04;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.StringTokenizer;
+import java.util.Scanner;
 
 public class Problem1546 {
 	public static void main(String[] args) throws IOException {
@@ -17,7 +14,7 @@ public class Problem1546 {
 		
 		첫째 줄에 시험 본 과목의 개수 N이 주어진다. 이 값은 1000보다 작거나 같다. 둘째 줄에 세준이의 현재 성적이 주어진다
 		*/
-		
+		/*
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		double[] arr = new double[Integer.parseInt(br.readLine())];
@@ -37,7 +34,25 @@ public class Problem1546 {
 		}
 		
 		System.out.println(sum/arr.length);
+		*/
 		
+		Scanner sc = new Scanner(System.in);
+		
+		int N = sc.nextInt();
+		int A[] = new int[N];
+		for(int i=0; i<N; i++) {
+			A[i] = sc.nextInt();
+		}
+		
+		long sum = 0;
+		long max = 0;
+		
+		for(int i=0; i<N; i++) {
+			if(A[i] > max) max = A[i];
+			sum += A[i];
+		}
+		
+		System.out.println(sum * 100.0 / max / N);
 	}
 
 }
