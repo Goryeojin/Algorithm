@@ -16,7 +16,8 @@ public class Problem11720 {
 		int sum = 0;
 		
 		for(int i=0; i<N; i++) {
-			sum += Integer.parseInt(String.valueOf(listNum.charAt(i)));
+//			sum += Integer.parseInt(String.valueOf(listNum.charAt(i)));
+			sum += (listNum.charAt(i)) - '0';
 		}
 		
 		System.out.println(sum);
