@@ -22,8 +22,8 @@ public class Problem12891 {
 	static int myArr[];
 	static int checkSecret;
 	
-	public static void main(String[] args) throws IOException {
-
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		
@@ -31,49 +31,43 @@ public class Problem12891 {
 		int P = Integer.parseInt(st.nextToken());
 		
 		int result = 0;
-		
-		char A[] = new char[S];
+		char[] A = new char[S];
 		checkArr = new int[4];
 		myArr = new int[4];
-		
 		checkSecret = 0;
 		
 		A = br.readLine().toCharArray();
-		
 		st = new StringTokenizer(br.readLine());
+		
 		for(int i=0; i<4; i++) {
 			checkArr[i] = Integer.parseInt(st.nextToken());
-			
-			if(checkArr[i] == 0) {
+			if(checkArr[i] == 0)
 				checkSecret++;
-			}
 		}
 		
-		// 초기 P부분 문자열 처리 부분
+		// 초기 P 부분 문자열 처리 부분
 		for(int i=0; i<P; i++) {
-			add(A[i]);
+			Add(A[i]);
 		}
 		
-		if(checkSecret == 4) {
+		if(checkSecret == 4)
 			result++;
-		}
 		
+		// 슬라이딩 윈도우 처리 부분
 		for(int i=P; i<S; i++) {
 			int j = i - P;
-			add(A[i]);
-			remove(A[j]);
-			if(checkSecret == 4) result++;
+			Add(A[i]);
+			Remove(A[j]);
+			if(checkSecret == 4)
+				result++;
 		}
-		
 		System.out.println(result);
-		br.close();
+		
 	}
 	
-	// 새로 들어온 문자를 처리하는 함수
-	private static void add(char c) {
-		
+	// 새로 들어온 함수를 처리하는 함수
+	private static void Add(char c) {
 		switch(c) {
-		
 		case 'A' :
 			myArr[0]++;
 			if(myArr[0] == checkArr[0])
@@ -101,9 +95,8 @@ public class Problem12891 {
 	}
 	
 	// 제거되는 문자를 처리하는 함수
-	private static void remove(char c) {
+	private static void Remove(char c) {
 		switch(c) {
-		
 		case 'A' :
 			if(myArr[0] == checkArr[0])
 				checkSecret--;
@@ -128,7 +121,6 @@ public class Problem12891 {
 			myArr[3]--;
 			break;
 		}
-		
 	}
 
 }

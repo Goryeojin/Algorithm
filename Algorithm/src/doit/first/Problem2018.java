@@ -20,7 +20,6 @@ public class Problem2018 {
 		int sum = 1;
 		
 		while(end_index != N) {
-			
 			if(sum == N) {
 				count++;
 				end_index++;
@@ -33,7 +32,6 @@ public class Problem2018 {
 				sum += end_index;
 			}
 		}
-		
 		System.out.println(count);
 	}
 

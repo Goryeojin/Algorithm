@@ -23,16 +23,15 @@ public class Problem1940 {
 		}
 		
 		Arrays.sort(A);
-		
 		int count = 0;
 		int i = 0;
-		int j = N-1;
+		int j = N - 1;
 		
-		while(i<j) {
-			if(A[i] + A[j] < M) {
-				i++;
-			} else if(A[i] + A[j] > M) {
+		while(i < j) {
+			if(A[i] + A[j] > M) {
 				j--;
+			} else if(A[i] + A[j] < M) {
+				i++;
 			} else {
 				count++;
 				i++;

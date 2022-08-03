@@ -23,8 +23,10 @@ public class Problem1253 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		int N = Integer.parseInt(br.readLine());
+		long[] A = new long[N];
+		
 		int result = 0;
-		long A[] = new long[N];
+		
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		
 		for(int i=0; i<N; i++) {
@@ -36,10 +38,11 @@ public class Problem1253 {
 		for(int k=0; k<N; k++) {
 			long find = A[k];
 			int i = 0;
-			int j = N-1;
+			int j = N - 1;
 			
-			while(i<j) {
+			while(i < j) {
 				if(A[i] + A[j] == find) {
+					// find는 서로 다른 두 수의 합이어야 함을 체크
 					if(i != k && j != k) {
 						result++;
 						break;
@@ -55,7 +58,9 @@ public class Problem1253 {
 				}
 			}
 		}
+		
 		System.out.println(result);
+		br.close();
 	}
 
 }
