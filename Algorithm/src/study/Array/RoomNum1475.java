@@ -1,4 +1,4 @@
-package study;
+package study.Array;
 
 import java.util.Scanner;
 
@@ -8,7 +8,6 @@ public class RoomNum1475 {
 		Scanner sc = new Scanner(System.in);
 		String str = sc.nextLine();
 		int[] arr = new int[10];
-		int count = 0;
 		int max = 0;
 		
 		for(int i=0; i<str.length(); i++) {
