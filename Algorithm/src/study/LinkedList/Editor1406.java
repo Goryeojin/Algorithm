@@ -27,8 +27,6 @@ public class Editor1406 {
 		while(iter.hasNext())
 			iter.next();
 		
-		int idx = ll.size();
-		
 		for(int i=0; i<m; i++) {
 			String cmd = br.readLine();
 			char c = cmd.charAt(0);
