@@ -66,8 +66,8 @@ public class Deque10866 {
 	public static int pop_front() {
 		if(size == 0)
 			return -1;
-		int res = deq[(front + 1) % 10000];
 		front = (front + 1) % 10000;
+		int res = deq[front];
 		size--;
 		return res;
 	}

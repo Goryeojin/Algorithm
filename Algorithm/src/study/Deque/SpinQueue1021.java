@@ -14,7 +14,7 @@ public class SpinQueue1021 {
 		int N = sc.nextInt();
 		int M = sc.nextInt();
 		
-		for(int i=0; i<N; i++) {
+		for(int i=1; i<=N; i++) {
 			deq.offer(i);
 		}
 		
