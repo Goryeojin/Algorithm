@@ -50,3 +50,15 @@
 &nbsp;|응용|17298|오큰수|
 &nbsp;|응용|3015|오아시스 재결합|
 &nbsp;|응용|6549|히스토그램에서 가장 큰 직사각형|
+[Queue](https://github.com/Goryeojin/Algorithm/tree/master/Algorithm/src/study/Queue)|연습|10845|큐|
+&nbsp;|기본:star:|18258|큐 2|
+&nbsp;|기본:star:|2164|카드 2|
+[Deque](https://github.com/Goryeojin/Algorithm/tree/master/Algorithm/src/study/Stack)|연습|10866|덱|
+&nbsp;|기본:star:|1021|회전하는 큐|
+&nbsp;|응용:star:|5430|AC|
+&nbsp;|응용|11003|최솟값 찾기|
+[Tap_into_Stack](https://github.com/Goryeojin/Algorithm/tree/master/Algorithm/src/study/UseOfStack)|연습|4949|균형잡힌 세상|
+&nbsp;|기본:star:|3986|좋은 단어|
+&nbsp;|기본|9012|괄호|
+&nbsp;|응용:star:|10799|쇠막대기|
+&nbsp;|응용:star:|2504|괄호의 값|
