@@ -67,23 +67,20 @@ public class IceBerg2573 {
 				}
 			}
 		}
-		
 		return cnt;
 	}
 	
 	static void bfs(int x, int y) {
 		Queue<int[]> q = new LinkedList<>();
-		
 		check[x][y] = true;
 		q.add(new int[] {x, y});
 		
-		while(q.isEmpty()) {
+		while(!q.isEmpty()) {
 			int[] now = q.poll();
-			
 			for(int k=0; k<4; k++) {
 				int nx = now[0] + dx[k];
 				int ny = now[1] + dy[k];
-				if(nx < 0 || ny < 0 || nx >= N || ny >= M) continue;
+				if(nx < 0 || ny < 0 || nx >= N || ny >= M || check[nx][ny]) continue;
 				if(board[nx][ny] != 0) {
 					check[nx][ny] = true;
 					q.add(new int[] {nx, ny});
@@ -102,14 +99,13 @@ public class IceBerg2573 {
 					for(int k=0; k<4; k++) {
 						int nx = i + dx[k];
 						int ny = j + dy[k];
-						if(nx < 0 || ny < 0 || nx >= N || ny >= M) continue;
+						if(nx < 0 || ny < 0 || nx >= N || ny >= M || visit[nx][ny]) continue;
 						if(board[nx][ny] == 0 && board[i][j] > 0) board[i][j]--;
 					}
 					if(board[i][j] > 0) cnt++;
 				}
 			}
 		}
-		
 		return cnt;
 	}
 }

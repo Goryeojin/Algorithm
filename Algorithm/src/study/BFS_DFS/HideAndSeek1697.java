@@ -22,12 +22,10 @@ public class HideAndSeek1697 {
 		System.out.println(res);
 	}
 	
-	private static int BFS(int node) {
+	private static int BFS(int idx) {
 		
 		Queue<Integer> queue = new LinkedList<>();
-		
-		queue.add(node);
-		int idx = node;
+		queue.add(idx);
 		int now = 0;
 		vis[idx] = 1;
 		
