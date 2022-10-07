@@ -8,18 +8,23 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class Drawing1926 {
+	
+	static int n, m;
+	static int max = 0;
+	static int[][] board;
+	static boolean[][] visited;
+	static int[] dx = {1, 0, -1, 0};
+	static int[] dy = {0, 1, 0, -1};
+	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
 		
-		int n = Integer.parseInt(st.nextToken());
-		int m = Integer.parseInt(st.nextToken());
+		n = Integer.parseInt(st.nextToken());
+		m = Integer.parseInt(st.nextToken());
 		
-		int[][] board = new int[n][m];
-		boolean[][] vis = new boolean[n][m];
-		
-		int[] dx = {1, 0, -1, 0};
-		int[] dy = {0, 1, 0, -1};
+		board = new int[n][m];
+		visited = new boolean[n][m];
 		
 		for(int i=0; i<n; i++) {
 			st = new StringTokenizer(br.readLine());
@@ -28,42 +33,38 @@ public class Drawing1926 {
 			}
 		}
 		
-		int max = 0;
 		int cnt = 0;
-		Queue<Pair> queue = new LinkedList<>();
+		
 		for(int i=0; i<n; i++) {
 			for(int j=0; j<m; j++) {
-				if(board[i][j] == 0 || vis[i][j]) continue;
-				cnt++;
-				vis[i][j] = true;
-				queue.add(new Pair(i, j));
-				int area = 0;
-				while(!queue.isEmpty()) {
-					area++;
-					Pair cur = queue.poll();
-					for(int dir=0; dir<4; dir++) {
-						int nx = cur.x + dx[dir];
-						int ny = cur.y + dy[dir];
-						if(nx < 0 || nx >= n || ny < 0 || ny >= m) continue;
-						if(vis[nx][ny] || board[nx][ny] != 1) continue;
-						vis[nx][ny] = true;
-						queue.add(new Pair(nx, ny));
-					}
+				if(board[i][j] == 1 && !visited[i][j]) {
+					bfs(i, j);
+					cnt++;
 				}
-				max = Math.max(max, area);
 			}
 		}
+
 		System.out.println(cnt);
 		System.out.println(max);
 	}
-}
-
-class Pair {
-	int x;
-	int y;
 	
-	Pair(int x, int y){
-		this.x = x;
-		this.y = y;
+	static void bfs(int x, int y) {
+		Queue<int[]> q = new LinkedList<>();
+		visited[x][y] = true;
+		q.add(new int[] {x, y});
+		int area = 0;
+		while(!q.isEmpty()) {
+			area++;
+			int[] now = q.poll();
+			for(int dir=0; dir<4; dir++) {
+				int nx = now[0] + dx[dir];
+				int ny = now[1] + dy[dir];
+				if(nx < 0 || nx >= n || ny < 0 || ny >= m) continue;
+				if(visited[nx][ny] || board[nx][ny] != 1) continue;
+				visited[nx][ny] = true;
+				q.add(new int[] {nx, ny});
+			}
+		}
+		max = Math.max(max, area);
 	}
 }

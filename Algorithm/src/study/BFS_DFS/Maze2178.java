@@ -41,9 +41,9 @@ public class Maze2178 {
 		
 		Queue<int[]> queue = new LinkedList<>();
 		queue.offer(new int[] {i, j});
+		vis[i][j] = true;
 		while(!queue.isEmpty()) {
 			int[] now = queue.poll();
-			vis[i][j] = true;
 			for(int k=0; k<4; k++) {
 				int nx = now[0] + dx[k];
 				int ny = now[1] + dy[k];

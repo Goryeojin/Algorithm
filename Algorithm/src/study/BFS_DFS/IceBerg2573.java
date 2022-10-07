@@ -52,7 +52,6 @@ public class IceBerg2573 {
 			}
 			ice = melting();
 			year++;
-			island = 0;
 		}
 	}
 	
