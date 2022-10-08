@@ -32,7 +32,6 @@ public class IceBerg2573 {
 		}
 		
 		solve();
-		
 	}
 	static void solve() {
 		int year = 0;
