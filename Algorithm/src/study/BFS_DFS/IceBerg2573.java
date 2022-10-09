@@ -30,7 +30,6 @@ public class IceBerg2573 {
 				board[i][j] = Integer.parseInt(st.nextToken());
 			}
 		}
-		
 		solve();
 	}
 	static void solve() {
